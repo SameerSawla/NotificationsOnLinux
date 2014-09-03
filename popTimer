@@ -1,0 +1,15 @@
+#!/bin/bash
+clear
+time=$(date +%k%M)
+timeUptil=$1;
+echo $time;
+while [ $time -lt $timeUptil ];
+do
+  sleep 60
+  time=$(date +%k%M)
+  echo $time
+done
+s=message
+s2=$2
+s3="${s}:${s2}"
+echo $s3 | zenity --notification --listen
